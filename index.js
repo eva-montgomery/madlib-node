@@ -25,8 +25,21 @@ const {petName, vaillainName, adjective, petDefense} = require('./pet-defense')
 petDefense(petName, vaillainName, adjective)
 
 const catNames = require('cat-names');
-const dogNames = require('dog-names');
+// const dogNames = require('dog-names');
 const supervillains = require('supervillains');
 const superb = require('superb');
 
 // Get a random word/name from each module
+
+let randomsuperb = superb.random();
+let randomCatNames = catNames.random();
+let randomSupervillains = supervillains.random();
+
+// Use the random words/names with your petDefense() function.
+
+petDefense(randomCatNames, randomSupervillains, randomsuperb);
+console.log(petDefense);
+
+// Bonus: use fs.writeFile() to save the madlibs to a file
+const fs = require('fs');
+fs.writeFile(fileName, petDefense);
